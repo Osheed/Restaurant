@@ -1,48 +1,68 @@
 package businessobject;
 
 import javax.persistence.Column;
+import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
 @Table(name="Rating")
 public class Rating {
 
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
+	@Column(name="lastname")
+	private String lastname;
+	@Column(name="firstname")
+	private String fistname;
 	@Column(name="amount_stars")
 	private int amount_stars;
 	@Column(name="comment")
 	private String comment;
-	@Column(name="cusername")
-	private String cusername;
 	
-	//Add relations : : FetchType Eager by default
-	@ManyToOne 
-	private Restaurant restaurant;
+	//Relations
+	@Embedded
+	private Address address;
 
-	//constructors
-	public Rating() {}
-	
-	public Rating(int amount_stars, String comment, String cusername, Restaurant restaurant) {
+	public Rating(String lastname, String fistname, int amount_stars, String comment) {
+		super();
+		this.lastname = lastname;
+		this.fistname = fistname;
 		this.amount_stars = amount_stars;
 		this.comment = comment;
-		this.restaurant = restaurant;
-		this.cusername = cusername;
+	}
+	
+	public Rating(){
+		
 	}
 
-	//getters and setters
 	public Long getId() {
 		return id;
 	}
 
 	public void setId(Long id) {
 		this.id = id;
+	}
+
+	public String getLastname() {
+		return lastname;
+	}
+
+	public void setLastname(String lastname) {
+		this.lastname = lastname;
+	}
+
+	public String getFistname() {
+		return fistname;
+	}
+
+	public void setFistname(String fistname) {
+		this.fistname = fistname;
 	}
 
 	public int getAmount_stars() {
@@ -61,19 +81,12 @@ public class Rating {
 		this.comment = comment;
 	}
 
-	public String getCusername() {
-		return cusername;
+	public Address getAddress() {
+		return address;
 	}
 
-	public void setCusername(String cusername) {
-		this.cusername = cusername;
+	public void setAddress(Address address) {
+		this.address = address;
 	}
-
-	public Restaurant getRestaurant() {
-		return restaurant;
-	}
-
-	public void setRestaurant(Restaurant restaurant) {
-		this.restaurant = restaurant;
-	}
+	
 }

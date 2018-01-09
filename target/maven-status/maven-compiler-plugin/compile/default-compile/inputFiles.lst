@@ -2,6 +2,7 @@ C:\rootJavaEE\Labs\Restaurant\src\main\java\managedbeans\RegistrationBean.java
 C:\rootJavaEE\Labs\Restaurant\src\main\java\exception\ManagingException.java
 C:\rootJavaEE\Labs\Restaurant\src\main\java\restaurantService\IManagement.java
 C:\rootJavaEE\Labs\Restaurant\src\main\java\restaurantService\RestaurantManagementBean.java
+C:\rootJavaEE\Labs\Restaurant\src\main\java\businessobject\Address.java
 C:\rootJavaEE\Labs\Restaurant\src\main\java\businessobject\Owner.java
 C:\rootJavaEE\Labs\Restaurant\src\main\java\businessobject\Menu.java
 C:\rootJavaEE\Labs\Restaurant\src\main\java\businessobject\Rating.java
