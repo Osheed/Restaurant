@@ -50,6 +50,10 @@ public class RatingBean {
 		for (Restaurant r : restaurantList) {
 			this.restaurantNames.add(r.getName_restaurant());
 		}
+		System.out.println("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@2length: " + restaurantNames.size());
+		for (String string : restaurantNames) {
+			System.out.println("Names: " + string);
+		}
 	}
 	
 	public String insertRating(){	
