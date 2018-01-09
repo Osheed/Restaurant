@@ -46,15 +46,18 @@ public class RatingBean {
 		
 		// get restaurants
 		this.restaurantList = rating.getRestaurants();
-		this.restaurantNames = new ArrayList<String>();
-		for (Restaurant r : restaurantList) {
-			this.restaurantNames.add(r.getName_restaurant());
+		if(restaurantList.size() == 0){
+			this.restaurantNames = new ArrayList<String>();
+			for (Restaurant r : restaurantList) {
+				this.restaurantNames.add(r.getName_restaurant());
+			}
 		}
 		System.out.println("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@2length: " + restaurantNames.size());
 		for (String string : restaurantNames) {
 			System.out.println("Names: " + string);
 		}
 	}
+	
 	
 	public String insertRating(){	
 		//insert new address

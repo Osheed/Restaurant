@@ -68,7 +68,7 @@ public class RegistrationBean {
 		InitialContext ctx = new InitialContext();
 		manager = (IManagement) ctx.lookup("java:global/TP12-WEB-EJB-PC-EPC-E-0.0.1-SNAPSHOT/RestaurantManagementBean!restaurantService.IManagement");
 				
-		restaurants = new ArrayList<Restaurant>();
+		restaurants = manager.getRestaurants();
 		System.out.println("Test initialise in RegistrationBean,Test initialise in RegistrationBean");
 	}
 	
@@ -104,6 +104,12 @@ public class RegistrationBean {
 		}
 		this.emailLogin = "";
 		return this.navigateTo;
+	}
+	public String toRateRestaurants(){
+		if(restaurants.size() == 0){
+			return navigateTo = "welcomePage";
+		}
+		return navigateTo = "rateRestaurant";
 	}
 	
 	public String logout(){
