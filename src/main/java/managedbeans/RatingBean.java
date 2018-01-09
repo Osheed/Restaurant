@@ -9,6 +9,7 @@ import javax.naming.InitialContext;
 import javax.naming.NamingException;
 
 import businessobject.Address;
+import businessobject.Rating;
 import businessobject.Restaurant;
 import restaurantService.IRating;
 
@@ -34,6 +35,8 @@ public class RatingBean {
 	private Address address;
 	
 	private String pageChange;
+	
+	private List<Rating> selectedRatings;
 	
 	@PostConstruct
 	public void initialize() throws NamingException {
@@ -97,6 +100,8 @@ public class RatingBean {
 	public void updateRestaurants(ValueChangeEvent event) {
 		this.sourceRestaurantName = (String)event.getNewValue();
     	
+		this.restaurant = rating.getRestaurant(this.sourceRestaurantName);
+		
 	    List<Restaurant> rest = rating.getRestaurants();
 	    this.restaurantNames.clear();
 	    this.restaurantNames = new ArrayList<String>();
@@ -107,6 +112,15 @@ public class RatingBean {
 	
 	
 	//getters and setters
+	public List<Rating> getSelectedRatings() {
+		Restaurant restaurant = this.rating.getRestaurant(this.restaurant.getName_restaurant());
+		return rating.getSelectedRatings(restaurant);
+	}
+
+	public void setSelectedRatings(List<Rating> selectedRatings) {
+		this.selectedRatings = selectedRatings;
+	}
+	
 	public String getStreetPerson() {
 		return streetPerson;
 	}

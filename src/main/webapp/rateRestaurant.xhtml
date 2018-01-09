@@ -51,18 +51,10 @@
 					<h:commandButton action="#{ratingBean.insertRating}" value="#{messages.saveRateBtn}" />
 				</h:panelGrid>
 				<br></br>
-				<h:outputText style="color:red;" value="#{ratingBean.rateInformation}" />
+				<h:outputText style="color:red;" value="put rating information here" />
 				<br></br>
 				<hr style="margin: 0; width: 100%; height: 2px; background: black; border: none;" />
 				<br></br>
-				<h:outputLabel style="font-weight:bold; margin-left:80px" value="#{messages.otherRateTitleLabel}"></h:outputLabel>
-				<ui:repeat value="#{ratingBean.selectedRatings}" var="field">
-					<h:panelGrid style="padding: 15px 0 0 0;" columns="3" layout="grid">
-						<h:outputText value="#{field.cusername} gave : " />
-						<h:outputText value="#{field.amount_stars} stars" />
-					</h:panelGrid>
-					<h:outputText value="#{field.comment}" />
-				</ui:repeat>
 			</h:form>
 		</ui:define>
 	</ui:composition>

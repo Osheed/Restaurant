@@ -2,13 +2,16 @@ package restaurantService;
 
 import java.util.List;
 
+import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
 
 import businessobject.Address;
 import businessobject.Rating;
 import businessobject.Restaurant;
 
+@Stateless
 public class RatingManagementBean implements IRating {
 
 	@PersistenceContext(name = "RestaurantPU")
@@ -49,5 +52,33 @@ public class RatingManagementBean implements IRating {
 	public void insertRating(int stars, String comment, Restaurant restaurant, Address address) {
 		Rating rating = new Rating(stars, comment, address, restaurant);
 		em.persist(rating);
+	}
+	
+	@Override
+	public List<Rating> getSelectedRatings(Restaurant currentRestaurantId) {
+		try {
+			Query query = em.createQuery("FROM Rating r where r.restaurant=:restaurant");
+			query.setParameter("restaurant", currentRestaurantId);
+			
+			return query.getResultList();			
+			
+		} catch (Exception e) {
+			return null;
+		}
+	}
+
+	@Override
+	public Restaurant getRestaurant(String name) {
+		try {
+			Query query = em.createQuery("FROM Restaurant r WHERE r.name_restaurant=:name_restaurant");
+			query.setParameter("name_restaurant", name);
+			
+			Restaurant restaurant = (Restaurant)query.getSingleResult();
+
+			return restaurant;
+		} catch (Exception e) {
+			return null;
+		}
+		
 	}
 }
