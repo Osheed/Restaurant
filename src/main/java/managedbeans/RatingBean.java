@@ -28,7 +28,6 @@ public class RatingBean {
 	
 	private int amountStars;
 	private String ratingComment;
-	private String rateInformation = "";
 	
 	private IRating rating;
 	private Restaurant restaurant;
@@ -62,24 +61,8 @@ public class RatingBean {
 		//rating.insertAddress(this.streetPerson, this.postcodePerson, this.cityPerson, this.countryPerson);
 		
 		rating.insertRating(this.amountStars, this.ratingComment, this.restaurant, this.address);
-		
-		// get restaurant
-		/*
-		int selectedRestIndex = -1;
-		for (int i = 0; i < restaurantList.size(); i++) {
-			if (restaurantList.get(i).getName_restaurant().equals(this.sourceRestaurantName)) {
-				selectedRestIndex = i;
-				break;
-			}
-		}
+		resetRateRestaurant();
 
-		if (this.amountStars != 0 && !this.ratingComment.trim().equals("") && selectedRestIndex != -1) {
-			rating.insertRating(this.amountStars, this.ratingComment, this.restaurant, this.address);
-			// reset content
-			resetRateRestaurant();
-		} else {
-			this.rateInformation = "sorry - not every form is filled out!";
-		}*/
 		this.pageChange = "welcomePage";
 
 		return this.pageChange;
@@ -93,8 +76,6 @@ public class RatingBean {
 		
 		this.amountStars = 0;
 		this.ratingComment = "";
-		
-		this.rateInformation = "";
 	}
 	
 	public void updateRestaurants(ValueChangeEvent event) {
@@ -110,24 +91,10 @@ public class RatingBean {
 		}
     }
 	
-	public void showMeAll() {
-		 List<Restaurant> rest = rating.getRestaurants();
-		    this.restaurantNames.clear();
-		    this.restaurantNames = new ArrayList<String>();
-			for (Restaurant r : rest) {
-				this.restaurantNames.add(r.getName_restaurant());
-			}
-			System.out.println("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@2Size of the Restaurants: " + restaurantNames.size());
-			for (String r : restaurantNames) {
-				System.out.println("These are the restaurats: " + r);
-			}
-	}
-	
-	
 	//getters and setters
 	public List<Rating> getSelectedRatings() {
-		Restaurant restaurant = this.rating.getRestaurant(this.restaurant.getName_restaurant());
-		return rating.getSelectedRatings(restaurant);
+		//Restaurant restaurant = this.rating.getRestaurant(this.restaurant.getName_restaurant());
+		return rating.getAllRatings();
 	}
 
 	public void setSelectedRatings(List<Rating> selectedRatings) {
@@ -197,4 +164,5 @@ public class RatingBean {
 	public void setRestaurantNames(List<String> restaurantNames) {
 		this.restaurantNames = restaurantNames;
 	}
+	
 }

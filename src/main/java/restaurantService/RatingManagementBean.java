@@ -47,19 +47,6 @@ public class RatingManagementBean implements IRating {
 		Rating rating = new Rating(stars, comment, address, restaurant);
 		em.persist(rating);
 	}
-	
-	@Override
-	public List<Rating> getSelectedRatings(Restaurant currentRestaurantId) {
-		try {
-			Query query = em.createQuery("FROM Rating r where r.restaurant=:restaurant");
-			query.setParameter("restaurant", currentRestaurantId);
-			
-			return query.getResultList();			
-			
-		} catch (Exception e) {
-			return null;
-		}
-	}
 
 	@Override
 	public Restaurant getRestaurant(String name) {

@@ -13,6 +13,5 @@ public interface IRating {
 	public List<Restaurant> getRestaurants();
 	public Restaurant getRestaurant(String name);
 	public void insertRating(int stars, String comment, Restaurant restaurant, Address address);
-	public List<Rating> getSelectedRatings(Restaurant currentRestaurantId);
 	
 }
