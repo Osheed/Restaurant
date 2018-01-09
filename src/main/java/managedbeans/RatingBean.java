@@ -51,6 +51,7 @@ public class RatingBean {
 	
 	public String insertRating(){	
 		//insert new address
+		this.address = new Address(this.streetPerson, this.postcodePerson, this.cityPerson, this.countryPerson);
 		rating.insertAddress(this.streetPerson, this.postcodePerson, this.cityPerson, this.countryPerson);
 		
 		// get restaurants
