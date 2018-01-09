@@ -92,19 +92,5 @@
 			<to-view-id>/manageMenus.xhtml</to-view-id>
 		</navigation-case>
 	</navigation-rule>
-	<navigation-rule>
-		<display-name>welcomePage.xhtml</display-name>
-		<from-view-id>/welcomePage.xhtml</from-view-id>
-		<navigation-case>
-			<to-view-id>/rateRestaurant.xhtml</to-view-id>
-		</navigation-case>
-	</navigation-rule>
-	<navigation-rule>
-		<display-name>rateRestaurant.xhtml</display-name>
-		<from-view-id>/rateRestaurant.xhtml</from-view-id>
-		<navigation-case>
-			<to-view-id>/welcomePage.xhtml</to-view-id>
-		</navigation-case>
-	</navigation-rule>
 	
 </faces-config>
