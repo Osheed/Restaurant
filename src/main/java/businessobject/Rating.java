@@ -6,20 +6,16 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
 @Table(name="Rating")
 public class Rating {
-
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
-	@Column(name="lastname")
-	private String lastname;
-	@Column(name="firstname")
-	private String fistname;
 	@Column(name="amount_stars")
 	private int amount_stars;
 	@Column(name="comment")
@@ -28,11 +24,12 @@ public class Rating {
 	//Relations
 	@Embedded
 	private Address address;
+	
+	@ManyToOne
+	private Restaurant restaurant;
 
-	public Rating(String lastname, String fistname, int amount_stars, String comment) {
+	public Rating(int amount_stars, String comment, Address address, Restaurant restaurant) {
 		super();
-		this.lastname = lastname;
-		this.fistname = fistname;
 		this.amount_stars = amount_stars;
 		this.comment = comment;
 	}
@@ -47,22 +44,6 @@ public class Rating {
 
 	public void setId(Long id) {
 		this.id = id;
-	}
-
-	public String getLastname() {
-		return lastname;
-	}
-
-	public void setLastname(String lastname) {
-		this.lastname = lastname;
-	}
-
-	public String getFistname() {
-		return fistname;
-	}
-
-	public void setFistname(String fistname) {
-		this.fistname = fistname;
 	}
 
 	public int getAmount_stars() {
@@ -87,6 +68,14 @@ public class Rating {
 
 	public void setAddress(Address address) {
 		this.address = address;
+	}
+
+	public Restaurant getRestaurant() {
+		return restaurant;
+	}
+
+	public void setRestaurant(Restaurant restaurant) {
+		this.restaurant = restaurant;
 	}
 	
 }

@@ -15,9 +15,7 @@ public class Address {
 		
 	}
 	
-
 	//Getters-Setters
-
 	public Address(String street, int postcode, String city, String country) {
 		super();
 		this.street = street;
@@ -25,7 +23,6 @@ public class Address {
 		this.city = city;
 		this.country = country;
 	}
-
 
 	public int getPostcode() {
 		return postcode;
@@ -43,28 +40,20 @@ public class Address {
 		this.country = country;
 	}
 
-
 	public String getStreet() {
 		return street;
 	}
-
 
 	public void setStreet(String street) {
 		this.street = street;
 	}
 
-
 	public String getCity() {
 		return city;
 	}
 
-
 	public void setCity(String city) {
 		this.city = city;
 	}
-
-
-	
-	
 	
 }

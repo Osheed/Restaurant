@@ -1,9 +1,12 @@
-C:\rootJavaEE\Labs\Restaurant\src\main\java\managedbeans\RegistrationBean.java
-C:\rootJavaEE\Labs\Restaurant\src\main\java\exception\ManagingException.java
-C:\rootJavaEE\Labs\Restaurant\src\main\java\restaurantService\IManagement.java
-C:\rootJavaEE\Labs\Restaurant\src\main\java\restaurantService\RestaurantManagementBean.java
-C:\rootJavaEE\Labs\Restaurant\src\main\java\businessobject\Address.java
-C:\rootJavaEE\Labs\Restaurant\src\main\java\businessobject\Owner.java
-C:\rootJavaEE\Labs\Restaurant\src\main\java\businessobject\Menu.java
-C:\rootJavaEE\Labs\Restaurant\src\main\java\businessobject\Rating.java
-C:\rootJavaEE\Labs\Restaurant\src\main\java\businessobject\Restaurant.java
+C:\Users\jenni\Desktop\java EE\rootJavaEE\Labs\Restaurant\src\main\java\managedbeans\RatingBean.java
+C:\Users\jenni\Desktop\java EE\rootJavaEE\Labs\Restaurant\src\main\java\restaurantService\RatingManagementBean.java
+C:\Users\jenni\Desktop\java EE\rootJavaEE\Labs\Restaurant\src\main\java\restaurantService\IRating.java
+C:\Users\jenni\Desktop\java EE\rootJavaEE\Labs\Restaurant\src\main\java\businessobject\Address.java
+C:\Users\jenni\Desktop\java EE\rootJavaEE\Labs\Restaurant\src\main\java\businessobject\Menu.java
+C:\Users\jenni\Desktop\java EE\rootJavaEE\Labs\Restaurant\src\main\java\businessobject\Owner.java
+C:\Users\jenni\Desktop\java EE\rootJavaEE\Labs\Restaurant\src\main\java\exception\ManagingException.java
+C:\Users\jenni\Desktop\java EE\rootJavaEE\Labs\Restaurant\src\main\java\managedbeans\RegistrationBean.java
+C:\Users\jenni\Desktop\java EE\rootJavaEE\Labs\Restaurant\src\main\java\restaurantService\IManagement.java
+C:\Users\jenni\Desktop\java EE\rootJavaEE\Labs\Restaurant\src\main\java\restaurantService\RestaurantManagementBean.java
+C:\Users\jenni\Desktop\java EE\rootJavaEE\Labs\Restaurant\src\main\java\businessobject\Rating.java
+C:\Users\jenni\Desktop\java EE\rootJavaEE\Labs\Restaurant\src\main\java\businessobject\Restaurant.java
