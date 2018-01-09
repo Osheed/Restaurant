@@ -52,7 +52,7 @@ public class RatingBean {
 				this.restaurantNames.add(r.getName_restaurant());
 			}
 		}
-		System.out.println("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@2length: " + restaurantNames.size());
+		System.out.println("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@length: " + restaurantNames.size());
 		for (String string : restaurantNames) {
 			System.out.println("Names: " + string);
 		}
@@ -64,7 +64,10 @@ public class RatingBean {
 		this.address = new Address(this.streetPerson, this.postcodePerson, this.cityPerson, this.countryPerson);
 		//rating.insertAddress(this.streetPerson, this.postcodePerson, this.cityPerson, this.countryPerson);
 		
-		// get restaurants
+		rating.insertRating(this.amountStars, this.ratingComment, this.restaurant, this.address);
+		
+		// get restaurant
+		/*
 		int selectedRestIndex = -1;
 		for (int i = 0; i < restaurantList.size(); i++) {
 			if (restaurantList.get(i).getName_restaurant().equals(this.sourceRestaurantName)) {
@@ -79,7 +82,7 @@ public class RatingBean {
 			resetRateRestaurant();
 		} else {
 			this.rateInformation = "sorry - not every form is filled out!";
-		}
+		}*/
 		this.pageChange = "welcomePage";
 
 		return this.pageChange;

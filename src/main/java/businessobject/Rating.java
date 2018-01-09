@@ -32,6 +32,8 @@ public class Rating {
 		super();
 		this.amount_stars = amount_stars;
 		this.comment = comment;
+		this.address = address;
+		this.restaurant = restaurant;
 	}
 	
 	public Rating(){

@@ -43,12 +43,6 @@ public class RatingManagementBean implements IRating {
 	}
 
 	@Override
-	public void insertAddress(String street, int postcode, String city, String country) {
-		Address address = new Address(street, postcode, city, country);
-		em.persist(address);
-	}
-
-	@Override
 	public void insertRating(int stars, String comment, Restaurant restaurant, Address address) {
 		Rating rating = new Rating(stars, comment, address, restaurant);
 		em.persist(rating);
@@ -81,4 +75,5 @@ public class RatingManagementBean implements IRating {
 		}
 		
 	}
+
 }
