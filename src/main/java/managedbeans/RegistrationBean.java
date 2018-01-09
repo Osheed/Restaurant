@@ -107,6 +107,7 @@ public class RegistrationBean {
 	}
 	public String toRateRestaurants(){
 		if(restaurants.size() == 0){
+		registerInformation = "No Available Restaurant to Rate";
 			return navigateTo = "welcomePage";
 		}
 		return navigateTo = "rateRestaurant";
