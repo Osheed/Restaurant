@@ -45,7 +45,7 @@ public class RatingBean {
 		rating = (IRating) ctx.lookup("java:global/TP12-WEB-EJB-PC-EPC-E-0.0.1-SNAPSHOT/RatingManagementBean!restaurantService.IRating");
 		
 		// get restaurants
-		List<Restaurant> restaurantList = rating.getRestaurants();
+		this.restaurantList = rating.getRestaurants();
 		this.restaurantNames = new ArrayList<String>();
 		for (Restaurant r : restaurantList) {
 			this.restaurantNames.add(r.getName_restaurant());
@@ -55,16 +55,9 @@ public class RatingBean {
 	public String insertRating(){	
 		//insert new address
 		this.address = new Address(this.streetPerson, this.postcodePerson, this.cityPerson, this.countryPerson);
-		rating.insertAddress(this.streetPerson, this.postcodePerson, this.cityPerson, this.countryPerson);
+		//rating.insertAddress(this.streetPerson, this.postcodePerson, this.cityPerson, this.countryPerson);
 		
 		// get restaurants
-		this.restaurantList.clear();
-		this.restaurantList = rating.getRestaurants();
-		this.restaurantNames.clear();
-		this.restaurantNames = new ArrayList<String>();
-		for (Restaurant r : restaurantList) {
-			this.restaurantNames.add(r.getName_restaurant());
-		}
 		int selectedRestIndex = -1;
 		for (int i = 0; i < restaurantList.size(); i++) {
 			if (restaurantList.get(i).getName_restaurant().equals(this.sourceRestaurantName)) {
@@ -100,7 +93,7 @@ public class RatingBean {
 	public void updateRestaurants(ValueChangeEvent event) {
 		this.sourceRestaurantName = (String)event.getNewValue();
     	
-		this.restaurant = rating.getRestaurant(this.sourceRestaurantName);
+		//this.restaurant = rating.getRestaurant(this.sourceRestaurantName);
 		
 	    List<Restaurant> rest = rating.getRestaurants();
 	    this.restaurantNames.clear();
@@ -109,6 +102,19 @@ public class RatingBean {
 			this.restaurantNames.add(r.getName_restaurant());
 		}
     }
+	
+	public void showMeAll() {
+		 List<Restaurant> rest = rating.getRestaurants();
+		    this.restaurantNames.clear();
+		    this.restaurantNames = new ArrayList<String>();
+			for (Restaurant r : rest) {
+				this.restaurantNames.add(r.getName_restaurant());
+			}
+			System.out.println("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@2Size of the Restaurants: " + restaurantNames.size());
+			for (String r : restaurantNames) {
+				System.out.println("These are the restaurats: " + r);
+			}
+	}
 	
 	
 	//getters and setters

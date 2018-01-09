@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <pageflow:Pageflow xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pageflow="http://www.sybase.com/suade/pageflow" id="pf151551775538919" configfile="/Restaurant/src/main/webapp/WEB-INF/faces-config.xml">
-  <nodes xsi:type="pageflow:PFPage" name="welcomePage.xhtml" x="554" y="370" id="pf151551776988120" referenceLink="//@navigationRule.4/@navigationCase.0/@toViewId|" outlinks="pf151551776988121 pf151551776988122 pf151551776988123" inlinks="pf151551776988124 pf151551776988125 pf151551776988126" path="/welcomePage.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="welcomePage.xhtml" x="554" y="370" id="pf151551776988120" referenceLink="//@navigationRule.10/@navigationCase.0/@toViewId|" outlinks="pf151551776988121 pf151551776988122 pf151552274185338" inlinks="pf151551776988124 pf151551776988125 pf151552274185339" path="/welcomePage.xhtml"/>
   <nodes xsi:type="pageflow:PFPage" name="register.xhtml" x="338" y="178" id="pf151551776988127" referenceLink="//@navigationRule.4/@fromViewId|" outlinks="pf151551776988125" inlinks="pf151551776988121" path="/register.xhtml"/>
   <nodes xsi:type="pageflow:PFPage" name="manageData.xhtml" x="338" y="562" id="pf151551776988128" referenceLink="//@navigationRule.6/@navigationCase.0/@toViewId|" outlinks="pf151551776988129 pf151551776988124" inlinks="pf151551776988122 pf151551776988130 pf151551776988131" path="/manageData.xhtml"/>
   <nodes xsi:type="pageflow:PFPage" name="addRestaurant.xhtml" x="122" y="562" id="pf151551776988132" referenceLink="//@navigationRule.5/@fromViewId|" outlinks="pf151551776988130" inlinks="pf151551776988129" path="/addRestaurant.xhtml"/>
   <nodes xsi:type="pageflow:PFPage" name="manageMenus.xhtml" x="122" y="946" id="pf151551776988133" referenceLink="//@navigationRule.8/@navigationCase.0/@toViewId|" outlinks="pf151551776988131 pf151551776988134" inlinks="pf151551776988135" path="/manageMenus.xhtml"/>
   <nodes xsi:type="pageflow:PFPage" name="addMenu.xhtml" x="338" y="946" id="pf151551776988136" referenceLink="//@navigationRule.8/@fromViewId|" outlinks="pf151551776988135" inlinks="pf151551776988134" path="/addMenu.xhtml"/>
-  <nodes xsi:type="pageflow:PFPage" name="rateRestaurant.xhtml" x="742" y="250" id="pf151551776988137" outlinks="pf151551776988126" inlinks="pf151551776988123" path="/rateRestaurant.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="rateRestaurant.xhtml" x="742" y="250" id="pf151551776988137" referenceLink="//@navigationRule.10/@fromViewId|" outlinks="pf151552274185339" inlinks="pf151552274185338" path="/rateRestaurant.xhtml"/>
   <links id="pf151551776988121" target="pf151551776988127" source="pf151551776988120" outcome="register"/>
   <links id="pf151551776988122" target="pf151551776988128" source="pf151551776988120" outcome="manageData.xhtml"/>
   <links id="pf151551776988129" target="pf151551776988132" source="pf151551776988128" outcome="addRestaurant.xhtml"/>
@@ -16,6 +16,6 @@
   <links id="pf151551776988131" target="pf151551776988128" source="pf151551776988133" outcome="manageData.xhtml"/>
   <links id="pf151551776988134" target="pf151551776988136" source="pf151551776988133" outcome="addMenu.xhtml"/>
   <links id="pf151551776988135" target="pf151551776988133" source="pf151551776988136" outcome="manageMenus.xhtml"/>
-  <links id="pf151551776988123" target="pf151551776988137" source="pf151551776988120"/>
-  <links id="pf151551776988126" target="pf151551776988120" source="pf151551776988137"/>
+  <links id="pf151552274185338" target="pf151551776988137" source="pf151551776988120"/>
+  <links id="pf151552274185339" target="pf151551776988120" source="pf151551776988137"/>
 </pageflow:Pageflow>

@@ -35,8 +35,8 @@
 					<h:inputText value="#{ratingBean.ratingComment}"></h:inputText>
 					
 					<h:outputText value="Restaurant: "></h:outputText>
-		        	<h:selectOneMenu value="#{registrationBean.sourceRestaurantName}" valueChangeListener="#{registrationBean.updateRestaurants}" onchange="submit()" style="width: 201px; ">
-		        		<f:selectItems value="#{registrationBean.restaurantNames}"/>
+		        	<h:selectOneMenu value="#{ratingBean.sourceRestaurantName}" valueChangeListener="#{ratingBean.updateRestaurants}" onchange="submit()" style="width: 201px; ">
+		        		<f:selectItems value="#{ratingBean.restaurantNames}"/>
 		        	</h:selectOneMenu>
 	
 					<h:outputText value="#{messages.yourStarsLabel}" />
@@ -55,6 +55,7 @@
 				<br></br>
 				<hr style="margin: 0; width: 100%; height: 2px; background: black; border: none;" />
 				<br></br>
+				<h:commandButton action="#{ratingBean.showMeAll}" value="showMeAll" />
 			</h:form>
 		</ui:define>
 	</ui:composition>
